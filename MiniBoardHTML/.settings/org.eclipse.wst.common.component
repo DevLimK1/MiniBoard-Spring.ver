@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="MiniBoard_springVer">
+    <wb-module deploy-name="MiniBoardHTML">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="MiniBoard_springVer"/>
-        <property name="java-output-path" value="/MiniBoard_springVer/build/classes"/>
+        <property name="context-root" value="MiniBoardHTML"/>
+        <property name="java-output-path" value="/MiniBoardHTML/build/classes"/>
     </wb-module>
 </project-modules>
