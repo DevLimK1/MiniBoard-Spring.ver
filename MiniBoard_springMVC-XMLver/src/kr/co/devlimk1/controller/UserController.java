@@ -28,7 +28,8 @@ public class UserController {
 	
 	@PostMapping("/join_pro")
 	public String join_pro(@Valid @ModelAttribute("joinUserBean") UserBean joinUserBean,
-			BindingResult result){
+			BindingResult result) {
+		
 		
 		if(result.hasErrors())
 			return "user/join";

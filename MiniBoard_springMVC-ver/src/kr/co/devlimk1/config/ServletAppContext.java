@@ -10,6 +10,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -110,5 +112,16 @@ public class ServletAppContext implements WebMvcConfigurer {
 		
 	}
 	
+	@Bean //@PropertySource("/WEB-INF/properties/db.properties") Bean 등록(error_message properties와 충돌 해결)
+	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+		return new PropertySourcesPlaceholderConfigurer();
+	}
+
+	@Bean //error_message.properties Bean 등록
+	public ReloadableResourceBundleMessageSource messageSource() {
+		ReloadableResourceBundleMessageSource res=new ReloadableResourceBundleMessageSource();
+		res.setBasename("/WEB-INF/properties/error_message");
+		return res;
+	}
 	
 }
